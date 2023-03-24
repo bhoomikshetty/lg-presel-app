@@ -14,10 +14,10 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int selected = 0;
+  int selected = -1;
   _buttonOnPressed(int index) {
     setState(() {
-      selected = index;
+      selected != index ? selected = index : selected = -1;
     });
   }
 
@@ -43,7 +43,9 @@ class _MainScreenState extends State<MainScreen> {
                 borderRadius: BorderRadius.circular(20.0),
                 boxShadow: [
                   BoxShadow(
-                    color: listOfColor[selected],
+                    color: selected < 0
+                        ? Colors.transparent
+                        : listOfColor[selected],
                     blurRadius: 30.0,
                     spreadRadius: 1.0,
                     offset: const Offset(0.0, 0.0),
