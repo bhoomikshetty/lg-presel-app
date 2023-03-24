@@ -1,6 +1,6 @@
 # lg_presel_app
 
-A new Flutter project.
+Flutter application for Liquid Galaxy Preselection task for GSoC 2023.
 
 ## Getting Started
 
